@@ -1,176 +1,162 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Simplon-lyon promo5 - JS DOM</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+  <title>Simplon-lyon promo5 - JS DOM</title>
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <style type="text/css">
-      .keywords {
-        color:teal;
-      }
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      .definition {
-        color: silver;
-      }
+  <style type="text/css">
+    .keywords {
+      color: teal;
+    }
 
-      .joke {
-        color: pink;
-      }
-    </style>
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides">
+    .definition {
+      color: silver;
+    }
+
+    .joke {
+      color: pink;
+    }
+
+    .simplon-color {
+      color: #F20048 !important;
+    }
+
+    .aqua {
+      color: aqua !important;
+    }
+  </style>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <img style="width:500px;" src="img/1.jpg">
+        <h3>GitHub SSH</h3>
+        <p>Présenté par Alpha & Thierry</p>
+      </section>
+
+      <section>
         <section>
-          <h2>Simplon-lyon promo5</h2>
-          <h3>GitHub SSH</h3>
-          <p>Présenté par Alpha & Thierry</p>
+          <h3 class="simplon-color">SSH</h3>
         </section>
 
         <section>
-          <section>
-            <h3>SSH</h3>
-          </section>
-            
-          <section>
-            <p>SSH est un protocol qui permet de se connecter et s'authentifier à des serveurs et services distants</p>
-            <p><span class="fragment">With SSH keys, you can connect to GitHub without supplying your username or password at each visit.</span></p>
-          </section>
-        </section>
-        <section>
+          <p>
+            <span class="aqua">SSH (Secure Shell):</span> est à la fois un programme informatique et un protocole de communication sécurisé.
+          </p>
+          <p class="fragment">
+            <span class="aqua">Fonction:</span> Session à distance sécurisée
+          </p>
+          <p class="fragment">
+            Les clés SSH permettent de se connecter (faire un push) sur GitHub sans avoir à renseigner à chaque fois ses identifiants.
+          </p>
 
-          <section>
-            <h3>Vérifier si les clés SSH existent déjà</h3>
-            <p>Avant de générer une clé SSH, il faut vérifier qu'il n'en existe pas déjà un.</p>
-          </section>
-            
-          
-            <section>
-              
-            <p>Pour vérifier les clés SSH existant</p>
-            <p>Ouvrer le terminal et saisissé:</p>
-            <pre><code class="terminal" data-trim contenteditable data-noescape>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h3>Générer des clés SSH</h3>
+          <p class="fragment">Avant de générer une clé SSH, on vérifie qu'elle n'existe pas déjà</p>
+        </section>
+
+        <section>
+          <p>Pour vérifier les clés SSH existant</p>
+          <p>1- Ouvrer le terminal et saisissez:</p>
+          <pre>
+            <code class="terminal" data-trim contenteditable data-noescape>
             ls -al ~/.ssh
-            </code></pre>
-            </section>
-            
-            <section>
-              <p>Vérifier dans la liste si il existe déjà une clé SSH publique</p>
-            <p>Par défault, les nom de fichier des clés publiques sont:</p>
-            <pre><code class="terminal" data-trim contenteditable data-noescape>
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <p>2- Vérifier dans la liste si il existe déjà une clé SSH publique</p>
+          <p class="fragment">Par défault, les nom de fichier des clés publiques sont:</p>
+          <pre class="fragment"><code class="terminal" data-trim contenteditable data-noescape>
             id_dsa.pub
             id_ecdsa.pub
             id_ed25519.pub
             </code></pre>
-            </section>
-            
-          </section>
+        </section>
 
-          <section>
-            <span class="fragment highlight-blue">Les autres selecteurs sont:</span>
-            <span class="fragment fade-in">
-            <pre><code class="js" data-trim contenteditable data-noescape>
-            document.getElementById("monId");
-            </code></pre>
-            <p>selectionne un element par son id</p>
-            <pre><code class="js" data-trim contenteditable data-noescape>
-            document.getElementsByClassName("mesClasses");
-            </code></pre>
-            <p>selectionne les elements par leur nom de classe</p>
-            <pre><code class="js" data-trim contenteditable data-noescape>
-            document.getElementsByTagName("mesElement");
-            </code></pre>
-            <p>selectionne les elements HTML (ex: tous les li)</p>
-            </span>
-          </section>
-          <section>
-            <p>Pourquoi vous montrer ses selecteurs alors que l'on peut faire la même chose avec querySelector et querySelectorAll ?</p>
-            <span class="fragment fade-in">
-              <p>Tous simplement car vous verrez souvent ses types de selecteurs dans la doc et dans le code d'autres personnes en ligne alors qu'ils sont simplement d'autres types de selecteurs.</p>
-            </span>
-          </section>
+      </section>
+      <section>
+        <section>
+          <img src="img/ssh1.png" alt="">
         </section>
         <section>
-          <h3>Les compétences d'un développeur</h3>
+          <img src="img/ssh2.png" alt="">
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Avantages:</h3>
           <ul>
-            <span class="fragment fade-in"><li>Polyglotte</li></span>
-            <span class="fragment fade-in"><li>Créatif</li></span>
-            <span class="fragment fade-in"><li>Communication & écoute</li></span>
-            <span class="fragment fade-in"><li>Travail en équipe</li></span>
-            <span class="fragment fade-in"><li>Autodidacte</li></span>
+            <li class="fragment">Elles garantissent l'authenticité, confidentialité et la l'integrité de ses données.</li>
+            <li class="fragment">
+              La transmission des données est chiffré, donc théoriquement peuvent etre difficilement comprise.
+            </li>
+            <!-- <li class="fragment">L'authentification par SSH permet une vérification d'identité beaucoup plus forte qu'un mot de passe.</li> -->
           </ul>
         </section>
         <section>
-          <img data-src="img/letsGo.gif">
+          <h3>Faiblesses:</h3>
+          <ul>
+            <li class="fragment">Si les clés privées ne peuvent pas être protégées, la sécurité n'est pas meilleure qu'avec l'authentification
+              par mot de passe.
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Conclusion</h3>
         </section>
         <section>
-          <section>
-            <h3>Les langages</h3>
-            <p>HTML & CSS</p>
-            <p>
-              <strong class="keywords">HTML</strong> <em class="definition">HyperText Markup Language</em><br>
-              <em class="fragment fade-in joke">
-                <i class="fa fa-heart"></i> How To Make Love (Comment faire l'amour) <i class="fa fa-heart"></i>
-              </em>
-              <br>
-              <span class="fragment fade-in">est un langage de balisage qui permet de structurer et mettre en forme le contenu des pages web.</span>
-            </p>
-          </section>
-          <section>
-            <p>
-              <strong class="keywords">CSS</strong> <em class="definition">Cascading Style Sheet</em>
-              <br>
-              <em class="fragment fade-in definition">Les Cascades S'est Stylé</em>
-              <br>
-              <span class="fragment fade-in">
-              est un langage de feuille de style utilisé pour décrire la présentation d'un document écrit en HTML.</span>
-            </p>
-          </section>
+          <p>Globalement, on peut retenir de SSH est un moyen plus sécurisé pour envoyer des données à distance.</p>
         </section>
-        <section>
-
-          <pre><code class="html" data-trim contenteditable data-noescape>
-          
-
-          </code></pre>
-          <p>Structure de base d'une page HTML</p>
-        </section>
-      </div>
+      </section>
+      
     </div>
+  </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
 
-    <script>
-      // More info about config & dependencies:
-      // - https://github.com/hakimel/reveal.js#configuration
-      // - https://github.com/hakimel/reveal.js#dependencies
-      Reveal.initialize({
-        dependencies: [
-          { src: 'plugin/markdown/marked.js' },
-          { src: 'plugin/markdown/markdown.js' },
-          { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-        ]
-      });
-    </script>
-  </body>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
 </html>
